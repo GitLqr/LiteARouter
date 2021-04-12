@@ -217,14 +217,16 @@ final class _LiteARouter {
     private void startActivity(int requestCode, Context currentContext, Intent intent, Postcard postcard, NavigationCallback callback) {
         if (requestCode >= 0) { // Need start for result
             if (currentContext instanceof Activity) {
-                // TODO: 2021/4/9 注意：这里可能不兼容RePlugin
-                ActivityCompat.startActivityForResult((Activity) currentContext, intent, requestCode, postcard.getOptionsBundle());
+                // 注意：RePlugin不支持使用ActivityCompat启动Activity
+                // ActivityCompat.startActivityForResult((Activity) currentContext, intent, requestCode, postcard.getOptionsBundle());
+                ((Activity) currentContext).startActivityForResult(intent, requestCode, postcard.getOptionsBundle());
             } else {
                 logger.warning(Consts.TAG, "Must use [navigation(activity, ...)] to support [startActivityForResult]");
             }
         } else {
-            // TODO: 2021/4/9 注意：这里可能不兼容RePlugin
-            ActivityCompat.startActivity(currentContext, intent, postcard.getOptionsBundle());
+            // 注意：RePlugin不支持使用ActivityCompat启动Activity
+            // ActivityCompat.startActivity(currentContext, intent, postcard.getOptionsBundle());
+            currentContext.startActivity(intent, postcard.getOptionsBundle());
         }
 
         if ((-1 != postcard.getEnterAnim() && -1 != postcard.getExitAnim()) && currentContext instanceof Activity) { // Old version
