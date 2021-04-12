@@ -1,6 +1,10 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        final def maven_repository_dir = rootProject.file(properties.getProperty("local.maven.repository.dir"))
+        maven { url uri(maven_repository_dir) }
         google()
         jcenter()
     }
@@ -14,6 +18,10 @@ buildscript {
 
 allprojects {
     repositories {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        final def maven_repository_dir = rootProject.file(properties.getProperty("local.maven.repository.dir"))
+        maven { url uri(maven_repository_dir) }
         google()
         jcenter()
     }
