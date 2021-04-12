@@ -1,0 +1,5 @@
+include ':litearouter-compiler'
+include ':litearouter-annotation'
+include ':litearouter-api'
+include ':app'
+rootProject.name = "LiteARouter"
