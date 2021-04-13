@@ -1,10 +1,8 @@
 package com.charylin.litearouter.launcher;
 
-import android.app.Application;
 import android.content.Context;
 import android.net.Uri;
 
-import com.charylin.litearouter.core.LogisticsCenter;
 import com.charylin.litearouter.facade.Postcard;
 import com.charylin.litearouter.facade.callback.NavigationCallback;
 import com.charylin.litearouter.facade.template.ILogger;
@@ -28,11 +26,11 @@ public class LiteARouter {
     private LiteARouter() {
     }
 
-    public static void init(Application application) {
+    public static void init(Context context) {
         if (!hasInit) {
             logger = _LiteARouter.logger;
             logger.info(Consts.TAG, "LiteARouter init start.");
-            hasInit = _LiteARouter.init(application);
+            hasInit = _LiteARouter.init(context.getApplicationContext());
             if (hasInit) {
                 _LiteARouter.afterInit();
             }

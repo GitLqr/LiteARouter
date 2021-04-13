@@ -1,7 +1,6 @@
 package com.charylin.litearouter.launcher;
 
 import android.app.Activity;
-import android.app.Application;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -42,8 +41,8 @@ final class _LiteARouter {
     private _LiteARouter() {
     }
 
-    public static boolean init(Application application) {
-        sContext = application;
+    public static boolean init(Context context) {
+        sContext = context.getApplicationContext();
         LogisticsCenter.init(sContext, sExecutor);
         hasInit = true;
         sHandler = new Handler(Looper.getMainLooper());
@@ -217,16 +216,12 @@ final class _LiteARouter {
     private void startActivity(int requestCode, Context currentContext, Intent intent, Postcard postcard, NavigationCallback callback) {
         if (requestCode >= 0) { // Need start for result
             if (currentContext instanceof Activity) {
-                // 注意：RePlugin不支持使用ActivityCompat启动Activity
-                // ActivityCompat.startActivityForResult((Activity) currentContext, intent, requestCode, postcard.getOptionsBundle());
-                ((Activity) currentContext).startActivityForResult(intent, requestCode, postcard.getOptionsBundle());
+                ActivityCompat.startActivityForResult((Activity) currentContext, intent, requestCode, postcard.getOptionsBundle());
             } else {
                 logger.warning(Consts.TAG, "Must use [navigation(activity, ...)] to support [startActivityForResult]");
             }
         } else {
-            // 注意：RePlugin不支持使用ActivityCompat启动Activity
-            // ActivityCompat.startActivity(currentContext, intent, postcard.getOptionsBundle());
-            currentContext.startActivity(intent, postcard.getOptionsBundle());
+            ActivityCompat.startActivity(currentContext, intent, postcard.getOptionsBundle());
         }
 
         if ((-1 != postcard.getEnterAnim() && -1 != postcard.getExitAnim()) && currentContext instanceof Activity) { // Old version
