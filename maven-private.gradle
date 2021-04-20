@@ -45,16 +45,15 @@ repositories {
 // Maven Private Deploy
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
-final def maven_repository_dir = rootProject.file(properties.getProperty("local.maven.repository.dir"))
-// println(maven_repository_dir)
-final def theGroup = project.ext['GROUP']
-final def version = project.ext['VERSION']
-final def pbArtifactId = project.ext['ARTIFACT_ID']
+final def mavenLocalDir = properties.getProperty('maven.local.dir')
+final def theGroup = publishedGroupId
+final def version = libraryVersion
+final def pbArtifactId = artifact
 
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: uri(maven_repository_dir))
+            repository(url: uri(mavenLocalDir))
             pom.groupId = theGroup
             pom.version = version
             pom.artifactId = pbArtifactId
@@ -65,8 +64,8 @@ uploadArchives {
 def uploadArchivesTask = tasks.getByName("uploadArchives")
 if (uploadArchivesTask != null) {
     def uploadArchivesCleanTask = tasks.create("uploadArchivesClean").doLast {
-        clear_cache(file("${maven_repository_dir.absolutePath}/${theGroup.replace('.', '/')}/$pbArtifactId"))
-        println("maven_repository_dir=$maven_repository_dir, theGroup=$theGroup, version=$version, pbArtifactId=$pbArtifactId")
+        clear_cache(file("${mavenLocalDir}/${theGroup.replace('.', '/')}/$pbArtifactId"))
+        println("mavenLocalDir=$mavenLocalDir, theGroup=$theGroup, version=$version, pbArtifactId=$pbArtifactId")
     }
     uploadArchivesCleanTask.group(uploadArchivesTask.group)
     uploadArchivesTask.dependsOn(uploadArchivesCleanTask)

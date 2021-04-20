@@ -102,7 +102,6 @@ public class Postcard extends RouteMeta {
      * Navigation to the route with path in postcard.
      * No param, will be use application context.
      */
-    @Deprecated
     public Object navigation() {
         return navigation(null);
     }

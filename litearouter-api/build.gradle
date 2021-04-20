@@ -2,6 +2,14 @@ plugins {
     id 'com.android.library'
 }
 
+ext {
+    bintrayName = 'litearouter-api'
+    artifact = bintrayName
+    libraryName = 'LiteARouter sdk'
+    libraryDescription = 'A router for android'
+    libraryVersion = litearouter_main_version
+}
+
 android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
@@ -10,7 +18,7 @@ android {
         minSdkVersion 16
         versionCode 1
         versionName "1.0"
-        consumerProguardFiles "consumer-rules.pro"
+        consumerProguardFiles 'proguard-rules.pro'
     }
 
     buildTypes {
@@ -27,7 +35,5 @@ dependencies {
     api 'com.charylin.litearouter:litearouter-annotation:1.0.0'
 }
 
-project.ext.GROUP = 'com.charylin.litearouter'
-project.ext.VERSION = '1.0.0'
-project.ext.ARTIFACT_ID = 'litearouter-api'
-apply from: '../maven-private.gradle'
+apply from: '../maven-publish.gradle'
+//apply from: '../maven-private.gradle'
