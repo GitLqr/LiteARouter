@@ -1,9 +1,10 @@
 package com.charylin.litearouter.utils;
 
 /**
+ * LiteARouter constants.
+ *
  * @author LQR
- * @time 2021/4/9
- * @desc LiteARouter constants.
+ * @since 2021/4/9
  */
 public final class Consts {
     public static final String SEPARATOR = "$$";

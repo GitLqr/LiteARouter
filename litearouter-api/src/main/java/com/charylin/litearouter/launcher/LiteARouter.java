@@ -10,9 +10,10 @@ import com.charylin.litearouter.facade.template.IRouteGroup;
 import com.charylin.litearouter.utils.Consts;
 
 /**
+ * LiteARouter facade
+ *
  * @author LQR
- * @time 2021/4/9
- * @desc LiteARouter facade
+ * @since 2021/4/9
  */
 public class LiteARouter {
 

@@ -17,28 +17,28 @@ import java.lang.annotation.Target;
 public @interface Route {
 
     /**
-     * Path of route
+     * @return Path of route
      */
     String path();
 
     /**
-     * Used to merger routes, the group name MUST BE USE THE COMMON WORDS !!!
+     * @return Used to merger routes, the group name MUST BE USE THE COMMON WORDS !!!
      */
     String group() default "";
 
     /**
-     * Name of route, used to generate javadoc.
+     * @return Name of route, used to generate javadoc.
      */
     String name() default "";
 
     /**
-     * Extra data, can be set by user.
+     * @return Extra data, can be set by user.
      * Ps. U should use the integer num sign the switch, by bits. 10001010101010
      */
     int extras() default Integer.MIN_VALUE;
 
     /**
-     * The priority of route.
+     * @return The priority of route.
      */
     int priority() default -1;
 }

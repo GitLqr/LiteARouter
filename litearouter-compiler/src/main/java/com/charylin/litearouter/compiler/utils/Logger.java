@@ -21,6 +21,7 @@ public class Logger {
 
     /**
      * Print info log.
+     * @param info 信息
      */
     public void info(CharSequence info) {
         if (StringUtils.isNotEmpty(info)) {
