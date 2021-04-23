@@ -35,9 +35,9 @@
 ### 1. 添加依赖和配置
 
 ```gradle
-compile 'io.github.gitlqr:litearouter-api:1.0.0'
-annotationProcessor 'io.github.gitlqr:litearouter-compiler:1.0.0' // Java项目
-// kapt 'io.github.gitlqr:litearouter-compiler:1.0.0' // Kotlin项目
+compile 'io.github.gitlqr:litearouter-api:1.0.1'
+annotationProcessor 'io.github.gitlqr:litearouter-compiler:1.0.1' // Java项目
+// kapt 'io.github.gitlqr:litearouter-compiler:1.0.1' // Kotlin项目
 ```
 
 ### 2. 添加注解
