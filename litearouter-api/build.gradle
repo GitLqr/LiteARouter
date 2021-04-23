@@ -32,7 +32,7 @@ android {
 dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.alibaba:fastjson:1.2.48'
-    api 'com.charylin.litearouter:litearouter-annotation:1.0.0'
+    api "io.github.gitlqr:litearouter-annotation:$litearouter_annotation_version"
 }
 
 apply from: '../maven-publish.gradle'
