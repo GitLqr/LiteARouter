@@ -2,14 +2,6 @@ plugins {
     id 'java-library'
 }
 
-ext {
-    bintrayName = 'litearouter-annotation'
-    artifact = bintrayName
-    libraryName = 'LiteARouter annotation'
-    libraryDescription = 'The annotation used in litearouter api'
-    libraryVersion = litearouter_annotation_version
-}
-
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_7

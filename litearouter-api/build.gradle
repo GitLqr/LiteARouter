@@ -2,14 +2,6 @@ plugins {
     id 'com.android.library'
 }
 
-ext {
-    bintrayName = 'litearouter-api'
-    artifact = bintrayName
-    libraryName = 'LiteARouter sdk'
-    libraryDescription = 'A router for android'
-    libraryVersion = litearouter_main_version
-}
-
 android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
@@ -30,7 +22,9 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    compileOnly 'com.android.support:appcompat-v7:27.1.1'
+    compileOnly 'androidx.appcompat:appcompat:1.1.0'
+
     implementation 'com.alibaba:fastjson:1.2.48'
     api project(':litearouter-annotation')
 }

@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.util.SparseArray;
 
 import com.alibaba.fastjson.JSON;
@@ -193,7 +190,7 @@ public class Postcard extends RouteMeta {
      * @param value a Object, or null
      * @return current
      */
-    public Postcard withObject(@Nullable String key, @Nullable Object value) {
+    public Postcard withObject(String key, Object value) {
         mBundle.putString(key, JSON.toJSONString(value));
         return this;
     }
@@ -208,7 +205,7 @@ public class Postcard extends RouteMeta {
      * @param value a String, or null
      * @return current
      */
-    public Postcard withString(@Nullable String key, @Nullable String value) {
+    public Postcard withString(String key, String value) {
         mBundle.putString(key, value);
         return this;
     }
@@ -221,7 +218,7 @@ public class Postcard extends RouteMeta {
      * @param value a boolean
      * @return current
      */
-    public Postcard withBoolean(@Nullable String key, boolean value) {
+    public Postcard withBoolean(String key, boolean value) {
         mBundle.putBoolean(key, value);
         return this;
     }
@@ -234,7 +231,7 @@ public class Postcard extends RouteMeta {
      * @param value a short
      * @return current
      */
-    public Postcard withShort(@Nullable String key, short value) {
+    public Postcard withShort(String key, short value) {
         mBundle.putShort(key, value);
         return this;
     }
@@ -247,7 +244,7 @@ public class Postcard extends RouteMeta {
      * @param value an int
      * @return current
      */
-    public Postcard withInt(@Nullable String key, int value) {
+    public Postcard withInt(String key, int value) {
         mBundle.putInt(key, value);
         return this;
     }
@@ -260,7 +257,7 @@ public class Postcard extends RouteMeta {
      * @param value a long
      * @return current
      */
-    public Postcard withLong(@Nullable String key, long value) {
+    public Postcard withLong(String key, long value) {
         mBundle.putLong(key, value);
         return this;
     }
@@ -273,7 +270,7 @@ public class Postcard extends RouteMeta {
      * @param value a double
      * @return current
      */
-    public Postcard withDouble(@Nullable String key, double value) {
+    public Postcard withDouble(String key, double value) {
         mBundle.putDouble(key, value);
         return this;
     }
@@ -286,7 +283,7 @@ public class Postcard extends RouteMeta {
      * @param value a byte
      * @return current
      */
-    public Postcard withByte(@Nullable String key, byte value) {
+    public Postcard withByte(String key, byte value) {
         mBundle.putByte(key, value);
         return this;
     }
@@ -299,7 +296,7 @@ public class Postcard extends RouteMeta {
      * @param value a char
      * @return current
      */
-    public Postcard withChar(@Nullable String key, char value) {
+    public Postcard withChar(String key, char value) {
         mBundle.putChar(key, value);
         return this;
     }
@@ -312,7 +309,7 @@ public class Postcard extends RouteMeta {
      * @param value a float
      * @return current
      */
-    public Postcard withFloat(@Nullable String key, float value) {
+    public Postcard withFloat(String key, float value) {
         mBundle.putFloat(key, value);
         return this;
     }
@@ -325,7 +322,7 @@ public class Postcard extends RouteMeta {
      * @param value a CharSequence, or null
      * @return current
      */
-    public Postcard withCharSequence(@Nullable String key, @Nullable CharSequence value) {
+    public Postcard withCharSequence(String key, CharSequence value) {
         mBundle.putCharSequence(key, value);
         return this;
     }
@@ -338,7 +335,7 @@ public class Postcard extends RouteMeta {
      * @param value a Parcelable object, or null
      * @return current
      */
-    public Postcard withParcelable(@Nullable String key, @Nullable Parcelable value) {
+    public Postcard withParcelable(String key, Parcelable value) {
         mBundle.putParcelable(key, value);
         return this;
     }
@@ -352,7 +349,7 @@ public class Postcard extends RouteMeta {
      * @param value an array of Parcelable objects, or null
      * @return current
      */
-    public Postcard withParcelableArray(@Nullable String key, @Nullable Parcelable[] value) {
+    public Postcard withParcelableArray(String key, Parcelable[] value) {
         mBundle.putParcelableArray(key, value);
         return this;
     }
@@ -366,7 +363,7 @@ public class Postcard extends RouteMeta {
      * @param value an ArrayList of Parcelable objects, or null
      * @return current
      */
-    public Postcard withParcelableArrayList(@Nullable String key, @Nullable ArrayList<? extends Parcelable> value) {
+    public Postcard withParcelableArrayList(String key, ArrayList<? extends Parcelable> value) {
         mBundle.putParcelableArrayList(key, value);
         return this;
     }
@@ -380,7 +377,7 @@ public class Postcard extends RouteMeta {
      * @param value a SparseArray of Parcelable objects, or null
      * @return current
      */
-    public Postcard withSparseParcelableArray(@Nullable String key, @Nullable SparseArray<? extends Parcelable> value) {
+    public Postcard withSparseParcelableArray(String key, SparseArray<? extends Parcelable> value) {
         mBundle.putSparseParcelableArray(key, value);
         return this;
     }
@@ -393,7 +390,7 @@ public class Postcard extends RouteMeta {
      * @param value an ArrayList object, or null
      * @return current
      */
-    public Postcard withIntegerArrayList(@Nullable String key, @Nullable ArrayList<Integer> value) {
+    public Postcard withIntegerArrayList(String key, ArrayList<Integer> value) {
         mBundle.putIntegerArrayList(key, value);
         return this;
     }
@@ -406,7 +403,7 @@ public class Postcard extends RouteMeta {
      * @param value an ArrayList object, or null
      * @return current
      */
-    public Postcard withStringArrayList(@Nullable String key, @Nullable ArrayList<String> value) {
+    public Postcard withStringArrayList(String key, ArrayList<String> value) {
         mBundle.putStringArrayList(key, value);
         return this;
     }
@@ -419,7 +416,7 @@ public class Postcard extends RouteMeta {
      * @param value an ArrayList object, or null
      * @return current
      */
-    public Postcard withCharSequenceArrayList(@Nullable String key, @Nullable ArrayList<CharSequence> value) {
+    public Postcard withCharSequenceArrayList(String key, ArrayList<CharSequence> value) {
         mBundle.putCharSequenceArrayList(key, value);
         return this;
     }
@@ -432,7 +429,7 @@ public class Postcard extends RouteMeta {
      * @param value a Serializable object, or null
      * @return current
      */
-    public Postcard withSerializable(@Nullable String key, @Nullable Serializable value) {
+    public Postcard withSerializable(String key, Serializable value) {
         mBundle.putSerializable(key, value);
         return this;
     }
@@ -445,7 +442,7 @@ public class Postcard extends RouteMeta {
      * @param value a byte array object, or null
      * @return current
      */
-    public Postcard withByteArray(@Nullable String key, @Nullable byte[] value) {
+    public Postcard withByteArray(String key, byte[] value) {
         mBundle.putByteArray(key, value);
         return this;
     }
@@ -458,7 +455,7 @@ public class Postcard extends RouteMeta {
      * @param value a short array object, or null
      * @return current
      */
-    public Postcard withShortArray(@Nullable String key, @Nullable short[] value) {
+    public Postcard withShortArray(String key, short[] value) {
         mBundle.putShortArray(key, value);
         return this;
     }
@@ -471,7 +468,7 @@ public class Postcard extends RouteMeta {
      * @param value a char array object, or null
      * @return current
      */
-    public Postcard withCharArray(@Nullable String key, @Nullable char[] value) {
+    public Postcard withCharArray(String key, char[] value) {
         mBundle.putCharArray(key, value);
         return this;
     }
@@ -484,7 +481,7 @@ public class Postcard extends RouteMeta {
      * @param value a float array object, or null
      * @return current
      */
-    public Postcard withFloatArray(@Nullable String key, @Nullable float[] value) {
+    public Postcard withFloatArray(String key, float[] value) {
         mBundle.putFloatArray(key, value);
         return this;
     }
@@ -497,7 +494,7 @@ public class Postcard extends RouteMeta {
      * @param value a CharSequence array object, or null
      * @return current
      */
-    public Postcard withCharSequenceArray(@Nullable String key, @Nullable CharSequence[] value) {
+    public Postcard withCharSequenceArray(String key, CharSequence[] value) {
         mBundle.putCharSequenceArray(key, value);
         return this;
     }
@@ -510,7 +507,7 @@ public class Postcard extends RouteMeta {
      * @param value a Bundle object, or null
      * @return current
      */
-    public Postcard withBundle(@Nullable String key, @Nullable Bundle value) {
+    public Postcard withBundle(String key, Bundle value) {
         mBundle.putBundle(key, value);
         return this;
     }
@@ -534,14 +531,13 @@ public class Postcard extends RouteMeta {
      * @param compat compat
      * @return this
      */
-    @RequiresApi(16)
-    public Postcard withOptionsCompat(ActivityOptionsCompat compat) {
-        if (null != compat) {
-            this.optionsCompat = compat.toBundle();
-        }
-        return this;
-    }
-
+    // @RequiresApi(16)
+    // public Postcard withOptionsCompat(ActivityOptionsCompat compat) {
+    //     if (null != compat) {
+    //         this.optionsCompat = compat.toBundle();
+    //     }
+    //     return this;
+    // }
     @Override
     public String toString() {
         return "Postcard{" +

@@ -1,7 +1,5 @@
 package com.gitlqr.litearouter.thread;
 
-import android.support.annotation.NonNull;
-
 import com.gitlqr.litearouter.launcher.LiteARouter;
 import com.gitlqr.litearouter.utils.Consts;
 
@@ -29,7 +27,7 @@ public class DefaultThreadFactory implements ThreadFactory {
         namePrefix = "LiteARouter task pool No." + poolNumber.getAndIncrement() + ", thread No.";
     }
 
-    public Thread newThread(@NonNull Runnable runnable) {
+    public Thread newThread(Runnable runnable) {
         String threadName = namePrefix + threadNumber.getAndIncrement();
         LiteARouter.logger.info(Consts.TAG, "Thread production, name is [" + threadName + "]");
         Thread thread = new Thread(group, runnable, threadName, 0);

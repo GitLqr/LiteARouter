@@ -7,10 +7,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.gitlqr.litearouter.compat.ActivityCompat;
+import com.gitlqr.litearouter.compat.FragmentCompat;
 import com.gitlqr.litearouter.core.LogisticsCenter;
 import com.gitlqr.litearouter.facade.Postcard;
 import com.gitlqr.litearouter.facade.callback.NavigationCallback;
@@ -194,12 +195,7 @@ final class _LiteARouter {
                 Class<?> fragmentMeta = postcard.getDestination();
                 try {
                     Object instance = fragmentMeta.getConstructor().newInstance();
-                    if (instance instanceof Fragment) {
-                        ((Fragment) instance).setArguments(postcard.getExtras());
-                    } else if (instance instanceof android.support.v4.app.Fragment) {
-                        ((android.support.v4.app.Fragment) instance).setArguments(postcard.getExtras());
-                    }
-
+                    FragmentCompat.getInstance().setArguments(instance, postcard.getExtras());
                     return instance;
                 } catch (Exception e) {
                     logger.error(Consts.TAG, "Fetch fragment instance error");
@@ -216,12 +212,12 @@ final class _LiteARouter {
     private void startActivity(int requestCode, Context currentContext, Intent intent, Postcard postcard, NavigationCallback callback) {
         if (requestCode >= 0) { // Need start for result
             if (currentContext instanceof Activity) {
-                ActivityCompat.startActivityForResult((Activity) currentContext, intent, requestCode, postcard.getOptionsBundle());
+                ActivityCompat.getInstance().startActivityForResult((Activity) currentContext, intent, requestCode, postcard.getOptionsBundle());
             } else {
                 logger.warning(Consts.TAG, "Must use [navigation(activity, ...)] to support [startActivityForResult]");
             }
         } else {
-            ActivityCompat.startActivity(currentContext, intent, postcard.getOptionsBundle());
+            ActivityCompat.getInstance().startActivity(currentContext, intent, postcard.getOptionsBundle());
         }
 
         if ((-1 != postcard.getEnterAnim() && -1 != postcard.getExitAnim()) && currentContext instanceof Activity) { // Old version

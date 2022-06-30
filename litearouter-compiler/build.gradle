@@ -2,15 +2,6 @@ plugins {
     id 'java-library'
 }
 
-ext {
-    bintrayName = 'litearouter-compiler'
-    artifact = bintrayName
-    libraryName = 'LiteARouter compiler'
-    libraryDescription = 'A compiler for LiteARouter to find route'
-    libraryVersion = litearouter_main_version
-}
-
-
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_7
