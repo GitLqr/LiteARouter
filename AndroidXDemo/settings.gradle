@@ -1,0 +1,12 @@
+include ':app'
+
+include ':litearouter-api'
+project(":litearouter-api").projectDir = new File('../litearouter-api')
+
+include ':litearouter-annotation'
+project(":litearouter-annotation").projectDir = new File('../litearouter-annotation')
+
+include ':litearouter-compiler'
+project(":litearouter-compiler").projectDir = new File('../litearouter-compiler')
+
+rootProject.name = "AndroidXDemo"

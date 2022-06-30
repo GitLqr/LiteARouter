@@ -3,3 +3,5 @@ include ':litearouter-annotation'
 include ':litearouter-api'
 include ':app'
 rootProject.name = "LiteARouter"
+
+includeBuild('./AndroidXDemo')
