@@ -79,7 +79,7 @@ LiteARouter.getInstance().build("/test/1")
 
 ```
 # LiteARouter
--keep public class com.charylin.litearouter.**{*;}
+-keep public class com.gitlqr.litearouter.**{*;}
 ```
 
 > 该库自带混淆规则，如果你项目Gradle版本比较旧的话，可能需要自己复制应用以上混淆规则。

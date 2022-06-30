@@ -21,4 +21,4 @@
 #-renamesourcefileattribute SourceFile
 
 # LiteARouter
--keep public class com.charylin.litearouter.**{*;}
+-keep public class com.gitlqr.litearouter.**{*;}

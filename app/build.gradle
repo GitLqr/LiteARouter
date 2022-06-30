@@ -7,7 +7,7 @@ android {
     buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "com.charylin.litearouter.demo"
+        applicationId "com.gitlqr.litearouter.demo"
         minSdkVersion 16
         versionCode 1
         versionName "1.0"

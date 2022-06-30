@@ -6,7 +6,6 @@ buildscript {
 
     ext.repositories_config = {
         // mavenLocal()
-        maven { url uri(mavenLocalDir) }
         maven { url 'https://maven.aliyun.com/repository/public/' }
         maven { url "https://www.jitpack.io" }
         google()
