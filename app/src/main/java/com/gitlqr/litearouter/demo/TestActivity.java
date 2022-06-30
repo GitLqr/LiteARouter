@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import com.gitlqr.litearouter.facade.annotation.Route;
 import com.gitlqr.litearouter.launcher.LiteARouter;
@@ -14,7 +13,6 @@ import com.gitlqr.litearouter.launcher.LiteARouter;
 @Route(path = "/root/test")
 public class TestActivity extends AppCompatActivity {
 
-    private FrameLayout flContainer;
     private Fragment testFragmentV4;
     private android.app.Fragment testFragment;
 
@@ -22,7 +20,6 @@ public class TestActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        flContainer = findViewById(R.id.fl_container);
         findViewById(R.id.btn_test_fragment_v4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
