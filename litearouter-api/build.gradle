@@ -1,6 +1,5 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
+apply from: '../lar-maven-publish.gradle'
 
 android {
     compileSdkVersion 27

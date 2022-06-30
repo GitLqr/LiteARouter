@@ -1,6 +1,6 @@
-plugins {
-    id 'java-library'
-}
+apply plugin: 'java-library'
+apply from: '../lar-maven-publish.gradle'
+
 
 //java {
 //    sourceCompatibility = JavaVersion.VERSION_1_7
