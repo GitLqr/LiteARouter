@@ -1,44 +1,39 @@
 # LiteARouter
 
+## _摘要（ very important!!! ）_：
 
+1. 顾名思义，本项目是【 [ARouter](https://github.com/alibaba/ARouter/) 精简版】，仅支持组件导航（Activity、Fragment 等）
+2. 本库对 ARouter 进行了改造：支持在【单独 [RePluginX](https://github.com/GitLqr/RePluginX) 插件】中使用。
 
-## *摘要（ very important!!! ）*：
-
-1. 顾名思义，本项目是【 [ARouter](https://github.com/alibaba/ARouter/) 精简版】，仅支持组件导航（Activity、Fragment等）
-2. 本库对 ARouter 进行了改造：支持在【单独 [RePlugin](https://github.com/Qihoo360/RePlugin/) 插件】中使用。
-
-> 注意：LiteARouter 并不支持在 RePlugin宿主中 统筹导航各个插件中的组件（丑话说在前面，别自己眼瞎还来骂我），仅仅只是支持在各个插件中单独使用而已。
-
-
+> 注意：LiteARouter 并不支持在 RePlugin 宿主中 统筹导航各个插件中的组件（丑话说在前面，别自己眼瞎还来骂我），仅仅只是支持在各个插件中单独使用而已。
 
 ## 一、功能介绍
 
-1. **支持 `RePlugin插件内使用` **
-2. **支持直接解析标准URL进行跳转**
-3. 映射关系按组分类、多级管理，按需初始化
-4. 支持获取Fragment
-5. 完全支持Kotlin以及混编
-6. 支持动态注册路由信息
-
-
+1. **支持 [RePluginX](https://github.com/GitLqr/RePluginX) 插件内使用**
+2. **同时兼容 `AndroidX` 与 `Support`**
+3. 支持直接解析标准 URL 进行跳转
+4. 映射关系按组分类、多级管理，按需初始化
+5. 支持获取 Fragment
+6. 完全支持 Kotlin 以及混编
+7. 支持动态注册路由信息
 
 ## 二、典型应用
 
-1. 从外部URL映射到内部页面，以及参数传递与解析
+1. 从外部 URL 映射到内部页面，以及参数传递与解析
 2. 跨模块页面跳转，模块间解耦
-3. 跨模块API调用，通过控制反转来做组件解耦
-
-
+3. 跨模块 API 调用，通过控制反转来做组件解耦
 
 ## 三、基础功能
 
 ### 1. 添加依赖和配置
 
 ```gradle
-compile 'io.github.gitlqr:litearouter-api:1.0.1'
-annotationProcessor 'io.github.gitlqr:litearouter-compiler:1.0.1' // Java项目
-// kapt 'io.github.gitlqr:litearouter-compiler:1.0.1' // Kotlin项目
+compile 'com.github.GitLqr.LiteARouter:litearouter-api:${version}'
+annotationProcessor 'com.github.GitLqr.LiteARouter:litearouter-compiler:${version}' // Java项目
+// kapt 'com.github.GitLqr.LiteARouter:litearouter-compiler:${version}' // Kotlin项目
 ```
+
+> 注：`${version}` 需要替换为最新的版本号，该库发布在 jitpack 上，最新版本为 ![JitPack](https://img.shields.io/jitpack/v/github/GitLqr/LiteARouter)
 
 ### 2. 添加注解
 
@@ -51,7 +46,7 @@ public class YourActivity extend Activity {
 }
 ```
 
-### 3. 初始化SDK
+### 3. 初始化 SDK
 
 ```java
 if (isDebug()) {           // 这两行必须写在init之前，否则这些配置在init过程中将无效
@@ -82,17 +77,4 @@ LiteARouter.getInstance().build("/test/1")
 -keep public class com.gitlqr.litearouter.**{*;}
 ```
 
-> 该库自带混淆规则，如果你项目Gradle版本比较旧的话，可能需要自己复制应用以上混淆规则。
-
-
-
-
-
-
-
-
-
-
-
-
-
+> 该库自带混淆规则，如果你项目 Gradle 版本比较旧的话，可能需要自己复制应用以上混淆规则。
